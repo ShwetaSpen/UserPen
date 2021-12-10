@@ -15,6 +15,7 @@
     tools:context=".RegisterActivity">
 
     <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linear_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -27,6 +28,7 @@
             android:src="@drawable/logo_small" />
 
         <LinearLayout
+            android:id="@+id/linear_one"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"

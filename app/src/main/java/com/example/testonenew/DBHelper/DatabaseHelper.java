@@ -136,5 +136,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             db.close();
         }
 
+        public Boolean validate(String email)
+        {
+            try
+            {
+            SQLiteDatabase db = this.getWritableDatabase();
+            String Query = "Select * from " + TABLE_USER + " where " + COLUMN_USER_EMAIL + " = " + email;
+            Cursor cursor = db.rawQuery(Query, null);
+            if (cursor.getCount() <= 0) {
+                cursor.close();
+                db.close();
+                return false;
+            }
+            else
+                return true;
+        } catch (Exception e) {
+    }
+        return false;
+}
+
 
     }

@@ -12,6 +12,8 @@
     <string name="text_Contact">Contact</string>
     <string name="text_address">Address</string>
     <string name="text_reg">Register Now</string>
+    <string name="error_message_email">Enter proper email</string>
+    <string name="error_message_name">Enter Name</string>
 
     <string-array name="brew_array">
     <item>Owner</item>
