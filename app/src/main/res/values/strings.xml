@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">testOneNew</string>
+
+    <string name="hint_email">Enter Email</string>
+    <string name="hint_password">Enter Password</string>
+    <string name="text_login">Login</string>
+    <string name="text_register">Not Registered Yet ? Register Now</string>
+    <string name="text_name">Name</string>
+    <string name="text_lastname">Last Name</string>
+    <string name="text_pass">Password</string>
+    <string name="text_DOB">Birth Date</string>
+    <string name="text_Contact">Contact</string>
+    <string name="text_address">Address</string>
+    <string name="text_reg">Register Now</string>
+
+    <string-array name="brew_array">
+    <item>Owner</item>
+    <item>Admin</item>
+    <item>Student</item>
+    </string-array>
+</resources>
