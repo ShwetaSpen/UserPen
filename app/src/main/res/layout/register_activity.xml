@@ -130,6 +130,7 @@
             android:layout_width="match_parent"
             app:boxBackgroundColor="@color/white"
             app:errorEnabled="true"
+            app:endIconMode="clear_text"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp">
 
@@ -138,8 +139,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/text_DOB"
-                android:inputType="textPassword"
+                android:inputType="date"
                 android:maxLines="1"
+                android:editable="false"
                 android:textColor="@color/purple_700" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -215,6 +217,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
+            android:clickable="true"
+            android:focusable="true"
             android:layout_marginHorizontal="30dp"
             android:background="@drawable/rounded_corner"
             android:text="@string/text_reg" />

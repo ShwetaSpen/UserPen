@@ -37,7 +37,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private String CREATE_USER_TABLE = "CREATE TABLE " + TABLE_USER + "("
             + COLUMN_USER_EMAIL + " TEXT PRIMARY KEY," + COLUMN_USER_NAME + " TEXT,"
             + COLUMN_USER_LASTNAME + " TEXT," + COLUMN_USER_PASSWORD + " TEXT,"
-            + COLUMN_USER_DOB + "TEXT," + COLUMN_USER_CONTACT + "TEXT,"
+
+
+            + COLUMN_USER_DOB + "DATE," + COLUMN_USER_CONTACT + "TEXT,"
             + COLUMN_USER_ADDRESS + "TEXT," +COLUMN_USER_TYPE + "TEXT" + ")";
 
     // drop table sql query
