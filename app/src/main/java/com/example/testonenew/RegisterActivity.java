@@ -2,6 +2,7 @@ package com.example.testonenew;
 
 import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -37,12 +38,13 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
     DatabaseHelper databaseHelper;
     InputValidation inputValidation;
     DatePickerDialog.OnDateSetListener mdateListner;
-    TextInputEditText textInputEditTextName, textInputEditTextPassword, textInputEditTextLastName,
-            textInputEditTextDOB, textInputEditTextContact, textInputEditTextAddress, textInputEditTextEmail;
+    TextInputEditText textInputEditTextName,
+            textInputEditTextPassword, textInputEditTextLastName,textInputEditTextDOB,
+             textInputEditTextContact, textInputEditTextAddress, textInputEditTextEmail;
     TextInputLayout textInputLayoutName,
             textInputLayoutPassword, textInputLayoutLastName, textInputLayoutEmail,
             textInputLayoutDOB, textInputLayoutContact, textInputLayoutAddress;
-    String name,email;
+    String name,email,password;
     Spinner staticSpinner;
 
     @Override
@@ -52,7 +54,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
-
+        databaseHelper = new DatabaseHelper(RegisterActivity.this);
 
         initViews();
         initListeners();
@@ -106,15 +108,13 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
                 imm.hideSoftInputFromWindow(linear_main.getWindowToken(), 0);
                 name = textInputEditTextName.getText().toString().trim();
                 email = textInputEditTextEmail.getText().toString().trim();
-                String password = textInputEditTextPassword.getText().toString().trim();
-              String lastname = textInputEditTextLastName.getText().toString().trim();
-              String DOB = textInputEditTextDOB.getText().toString();
-               String contact = textInputEditTextContact.getText().toString();
+                password = textInputEditTextPassword.getText().toString().trim();
+              String lastname = String.valueOf(textInputEditTextLastName.getText());
+              String DOB = String.valueOf(textInputEditTextDOB.getText());
+               String contact = String.valueOf(textInputEditTextContact.getText());
                 String address = textInputEditTextAddress.getText().toString();
-                    String s = staticSpinner.getSelectedItem().toString();
+                String s = staticSpinner.getSelectedItem().toString();
                 postDataToSQLite();
-
-
 
 
                 Boolean val = databaseHelper.validate(email);
@@ -125,25 +125,25 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
                     user.setEmail(textInputEditTextEmail.getText().toString().trim());
                     user.setPassword(textInputEditTextPassword.getText().toString().trim());
 */
-
-                    user.setEmail(email);
+                    /*user.setEmail(email);
                     user.setName(name);
                     user.setLastname(lastname);
                     user.setPassword(password);
                     user.setAddress(address);
                     user.setContact(contact);
                     user.setDOB(DOB);
-                    user.setType(s);
+                    user.setType(s);*/
                     // after adding the data we are displaying a toast message.
-                    databaseHelper.addUser(user);
+                    databaseHelper.addUser(email,name,lastname,password,DOB,contact,address,s);
                     Toast.makeText(RegisterActivity.this, " Details Added", Toast.LENGTH_SHORT).show();
-                    emptyInputEditText();
+                    Intent intentLogin = new Intent(getApplicationContext(),MainActivity.class);
+                    startActivity(intentLogin);
                 }
                 else
                 {
                     Toast.makeText(RegisterActivity.this, "Email Already Exists", Toast.LENGTH_SHORT).show();
                 }
-
+                emptyInputEditText();
 
 //
 //
