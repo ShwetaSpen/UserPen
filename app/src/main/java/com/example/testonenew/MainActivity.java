@@ -128,6 +128,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (databaseHelper.checkUser(textInputEditTextEmail.getText().toString().trim()
                 , textInputEditTextPassword.getText().toString().trim())) {
 
+
+
+
         // List<String> role = databaseHelper.checkRole(textInputEditTextEmail.getText().toString().trim());
 
                /* if(role.equals("Admin") )

@@ -1,21 +1,13 @@
 package com.example.testonenew.DBHelper;
 
-import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.widget.Toast;
 
 
-
-
-import com.example.testonenew.RegisterActivity;
 import com.example.testonenew.model.User;
-
-import java.util.ArrayList;
-import java.util.List;
 
 //to manage database creation and versions
 public class DatabaseHelper extends SQLiteOpenHelper {
@@ -192,17 +184,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return false;
     }
 
-    public boolean checkUserRole(String email, String password) {
+    public Cursor checkUserRole(String email ) {
         // array of columns to fetch
+        User user = new User();
+
         String[] columns = {
-                COLUMN_USER_EMAIL
+                COLUMN_USER_TYPE
         };
         SQLiteDatabase db = this.getReadableDatabase();
+
         // selection criteria
 
-        String selection = COLUMN_USER_EMAIL + " = ?" + " AND " + COLUMN_USER_PASSWORD + " = ?";
+        String selection = COLUMN_USER_EMAIL + " = ?";
         // selection arguments
-        String[] selectionArgs = {email, password};
+        String[] selectionArgs = {email};
 
         // query user table with condition
         Cursor cursor = db.query(TABLE_NAME, //Table to query
@@ -213,12 +208,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 null,                       //filter by row groups
                 null);                      //The sort order
         int cursorCount = cursor.getCount();
-        cursor.close();
+
+     /*   cursor.close();
         db.close();
-        if (cursorCount > 0) {
-            return true;
+     */   if (cursorCount > 0) {
+           // String a= cursor.getString(0);
+//           user.setType(cursor.getString(0));
+
+            return cursor;
         }
-        return false;
+        return null;
     }
 
 
