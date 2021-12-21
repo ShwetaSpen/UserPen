@@ -22,6 +22,8 @@
 
         <activity android:name=".RegisterActivity"></activity>
         <activity android:name=".UsersListActivity"></activity>
+        <activity android:name=".Owner.AddPen"></activity>
+
 
     </application>
 

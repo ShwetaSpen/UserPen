@@ -6,6 +6,15 @@ public class itemOwnerModel {
     String name;
     String Service;
 
+    public itemOwnerModel(int image, String name) {
+        this.image = image;
+        this.name = name;
+    }
+
+    public void changeText(String text)
+    {
+        name =text;
+    }
     public int getImage() {
         return image;
     }
