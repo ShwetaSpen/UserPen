@@ -10,10 +10,12 @@
         <entry key="app/src/main/res/drawable/bg_color.xml" value="0.32916666666666666" />
         <entry key="app/src/main/res/drawable/card_back.xml" value="0.18333333333333332" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.19074074074074074" />
+        <entry key="app/src/main/res/drawable/ripple_bg.xml" value="0.2657407407407407" />
         <entry key="app/src/main/res/drawable/rounded_corner.xml" value="0.19074074074074074" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2175925925925926" />
         <entry key="app/src/main/res/layout/addpen.xml" value="0.14994934143870314" />
         <entry key="app/src/main/res/layout/icon_list.xml" value="0.10131712259371833" />
+        <entry key="app/src/main/res/layout/mypen_dialog.xml" value="0.335" />
         <entry key="app/src/main/res/layout/mypen_layout.xml" value="0.16843971631205673" />
         <entry key="app/src/main/res/layout/register_activity.xml" value="0.16119096509240247" />
         <entry key="app/src/main/res/layout/service_list.xml" value="0.10131712259371833" />

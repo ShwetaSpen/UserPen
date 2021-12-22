@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -69,7 +70,7 @@ public class UsersListActivity extends AppCompatActivity {
         String first = parts[0];
         String second = parts[1];
         getSupportActionBar().setTitle("Hi ! " + first);
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(0xff00DDED));
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.blue)));
 
 
         cursor = db.checkUserRole(userName);
@@ -115,7 +116,16 @@ public class UsersListActivity extends AppCompatActivity {
         }
 
         if (position == 1) {
-            myPenDialog.show();
+
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    myPenDialog.show();
+                }
+            }, 2000);
+
+
+//            myPenDialog.show();
             //Toast.makeText(this,"you pressed "+position,Toast.LENGTH_SHORT).show();
         }
         if (position == 4 || position == 5 || position == 6 || position == 7 || position == 8 || position == 9 || position == 10 || position == 11) {
